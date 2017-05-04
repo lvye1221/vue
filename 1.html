@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en" id="box">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+	  <!--jQuery-->
+	  <script src="js/jQuery/jquery-1.12.4.min.js"></script>
+    <title>{{title}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="js/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/justified-nav.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	  <!--vue.js-->
+	  <script src="js/vue.js"></script>
+  </head>
+
+  <body>
+      <div class="masthead">
+        <h3 class="text-muted">&nbsp;&nbsp;{{title}}</h3>
+        <nav>
+          <ul class="nav nav-justified">
+            <li class="active"><a href="#">网站首页</a></li>
+            <li v-for="li in menu"><a href="#" v-text="li"></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+		<div class="container" v-for="p in welcome">
+          <p v-text="p"></p>
+          <!--<h3>-->
+
+		  <!--</h3>-->
+		  <!-- 
+          <p ng-repeat="p in welcomeList">
+			{{p}}
+		  </p>
+		   -->
+		</div>
+
+	  </div>
+
+
+	  <div class="content-section">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col-lg-12"  v-for="h in head">
+
+
+            <h2 v-text="h"></h2>
+            <!--<h3>{{headList[1]}}</h3>-->
+			</div>
+		  </div>
+		</div>
+	  </div>
+ 
+
+
+
+		  <div ng-class="{true: 'content-section-right', false: 'content-section-left'}[$index%2==0]" ng-repeat="intro in introList">
+		<div class="container">
+		  <div class="row" v-for="int in intro">
+			<div class="col-lg-5 col-sm-6" ng-class="{true: '', false: 'col-lg-offset-1 col-sm-push-6'}[$index%2==0]">
+			  <h2 class="section-heading" v-text="int.title"></h2>
+			  <p>
+		  		<span v-for='img in int.imageList'>
+		  		  <img :src="img" class="img-thumbnail img-pre" ng-mouseenter="showImage(intro.index, img)">
+		  		</span>
+			  </p>
+			  <p class="lead" ng-repeat="p in intro.contentList" v-text="int.contentList">
+			  </p>
+			  <!-- <pre><code>https://unsplash.it/200/300/?random</code></pre> -->
+			</div>
+
+
+			<div class="col-lg-5 col-sm-6" ng-class="{true: 'col-lg-offset-2', false: 'col-sm-pull-6'}[$index%2==0]">
+			  <img class="img-responsive random-image img-thumbnail" :src="int.imageShow" alt="">
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>{{footer}}</p>
+        <p>© Company 2016</p>
+
+      </footer>
+</body>
+</html>
+<script src="js/vuejs.js"></script>
