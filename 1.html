@@ -43,7 +43,7 @@
         <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="#">网站首页</a></li>
-            <li v-for="li in menu"><a href="#" v-text="li"></a></li>
+			  <aaa v-for="bbb in ccc" v-bind:ddd="bbb"></aaa>
           </ul>
         </nav>
       </div>
@@ -52,9 +52,15 @@
       <div class="jumbotron">
 		<div class="container" v-for="p in welcome">
           <p v-text="p"></p>
-          <!--<h3>-->
-
-		  <!--</h3>-->
+			<!--<p>-->
+				<!--{{welcomeList[0]}}-->
+			<!--</p>-->
+			<!--<p>-->
+				<!--{{welcomeList[1]}}-->
+			<!--</p>-->
+			<!--<h3>-->
+				<!--{{welcomeList[2]}}-->
+			<!--</h3>-->
 		  <!-- 
           <p ng-repeat="p in welcomeList">
 			{{p}}
@@ -72,6 +78,8 @@
 
 
             <h2 v-text="h"></h2>
+				<!--<h2>{{headList[0]}}</h2>-->
+				<!--<h3>{{headList[1]}}</h3>-->
             <!--<h3>{{headList[1]}}</h3>-->
 			</div>
 		  </div>
