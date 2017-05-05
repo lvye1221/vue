@@ -12,8 +12,9 @@
              el:"#box",
              data:{
                  title:data.title,
-                 ccc:data.menu
-
+                 ccc:data.menu,
+                 welcomeList:data.welcome,
+                 headList:data.head
              }
          })
         })

@@ -50,17 +50,16 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron">
-		<div class="container" v-for="p in welcome">
-          <p v-text="p"></p>
-			<!--<p>-->
-				<!--{{welcomeList[0]}}-->
-			<!--</p>-->
-			<!--<p>-->
-				<!--{{welcomeList[1]}}-->
-			<!--</p>-->
-			<!--<h3>-->
-				<!--{{welcomeList[2]}}-->
-			<!--</h3>-->
+		<div class="container">
+			<p>
+				{{welcomeList[0]}}
+			</p>
+			<p>
+				{{welcomeList[1]}}
+			</p>
+			<h3>
+				{{welcomeList[2]}}
+			</h3>
 		  <!-- 
           <p ng-repeat="p in welcomeList">
 			{{p}}
@@ -74,12 +73,10 @@
 	  <div class="content-section">
 		<div class="container-fluid">
 		  <div class="row">
-			<div class="col-lg-12"  v-for="h in head">
+			<div class="col-lg-12" >
 
-
-            <h2 v-text="h"></h2>
-				<!--<h2>{{headList[0]}}</h2>-->
-				<!--<h3>{{headList[1]}}</h3>-->
+				<h2>{{headList[0]}}</h2>
+				<h3>{{headList[1]}}</h3>
             <!--<h3>{{headList[1]}}</h3>-->
 			</div>
 		  </div>
